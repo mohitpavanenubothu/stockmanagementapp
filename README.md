@@ -1,1 +1,1 @@
-# stockmanagementapp
+# stockmanagementapp setup
