@@ -1,13 +1,16 @@
 package com.user.details;
 
 import com.user.details.model.OrderDTO;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -17,6 +20,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SpringBootApplication
+@RestController
+@RequestMapping("/hello")
 public class UserServiceApplication {
 
     @Autowired
@@ -30,7 +35,7 @@ public class UserServiceApplication {
     private int attempt = 1;
 
     @GetMapping("/displayOrders")
-    // @CircuitBreaker(name =USER_SERVICE,fallbackMethod = "getAllAvailableProducts")
+    @CircuitBreaker(name = USER_SERVICE, fallbackMethod = "getAllAvailableProducts")
     //@Retry(name = USER_SERVICE,fallbackMethod = "getAllAvailableProducts")
     public List<OrderDTO> displayOrders(@RequestParam("category") String category) {
         String url = category == null ? BASEURL : BASEURL + "/" + category;

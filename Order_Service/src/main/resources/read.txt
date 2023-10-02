@@ -1,0 +1,8 @@
+1. http://localhost:8098/order/placeOrder
+
+{
+    "id":1,
+    "productId":1,
+    "quantity":1,
+    "totalAmount":39000
+}

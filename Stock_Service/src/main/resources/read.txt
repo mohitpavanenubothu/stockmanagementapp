@@ -1,0 +1,11 @@
+1. http://localhost:8097/product/save
+Input: {
+           "productName":"Apple 13",
+           "price":50000,
+           "quantity":1
+       }
+ 2. http://localhost:8097/h2-console/
+
+ 3. http://localhost:8097/product
+
+ 4. http://localhost:8097/product/reduceQuantity/3?quantity=10

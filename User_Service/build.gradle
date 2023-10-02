@@ -26,6 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.12'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.7.12'
 	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:2.1.6'
+    implementation 'io.github.resilience4j:resilience4j-circuitbreaker:2.1.0'
 	compileOnly 'org.projectlombok:lombok:1.18.26'
 	runtimeOnly 'com.h2database:h2:2.1.214'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
