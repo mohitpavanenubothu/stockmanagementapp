@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.stream.Stream;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableTransactionManagement
 public class OrderServiceApplication {
 
     @Bean
